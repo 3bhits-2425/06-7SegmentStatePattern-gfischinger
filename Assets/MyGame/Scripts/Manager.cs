@@ -13,7 +13,7 @@ public class Manager : MonoBehaviour
 
     private void Start()
     {
-        myDisplayState = new State0();
+        myDisplayState = State0.GetState();
 
         if(myDigit == null)
         {
@@ -70,12 +70,12 @@ public class Manager : MonoBehaviour
     }
     
     private bool IsPlusPressed() {
-        return Input.GetKeyDown(KeyCode.Y) ||
+        return Input.GetKeyDown(KeyCode.W) ||
                Input.GetKeyDown(KeyCode.KeypadPlus);
     }
 
     private bool IsMinusPressed() {
-        return Input.GetKeyDown(KeyCode.Z) ||
+        return Input.GetKeyDown(KeyCode.S) ||
                Input.GetKeyDown(KeyCode.KeypadMinus);
     }
 

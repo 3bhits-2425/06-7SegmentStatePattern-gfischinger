@@ -1,18 +1,29 @@
 // Represents 0 digit for a 7 segment display
 public class State0 : ISevenSegmentDisplayState
 {
+    static ISevenSegmentDisplayState _state;
 
     public int GetDigit() {
         return 0;
     }
 
     public ISevenSegmentDisplayState CountUp() {
-        return new State1();
+        return State1.GetState();
     }
 
     public ISevenSegmentDisplayState CountDown() {
-        return new State9();
+        return State9.GetState();
     }
 
+    private State0() {
+
+    }
+
+    public static ISevenSegmentDisplayState GetState() {
+        if (_state == null) {
+            _state = new State0();
+        }
+        return _state;
+    }
 
 }
